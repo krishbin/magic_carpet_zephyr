@@ -1,0 +1,26 @@
+identifier: magic_carpet
+name: MagicCarpet CAN Board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 128
+flash: 128
+supported:
+  - uart
+  - nvs
+  - rng
+  - pwm
+  - i2c
+  - gpio
+  - usb device
+  - counter
+  - spi
+  - watchdog
+  - adc
+  - dac
+  - dma
+  - can
+vendor: st

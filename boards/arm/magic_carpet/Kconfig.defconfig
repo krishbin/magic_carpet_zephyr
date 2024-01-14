@@ -1,0 +1,15 @@
+# MagicCarpet board configuration
+
+# Copyright 2021 The Chromium OS Authors
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_MAGIC_CARPET
+
+config BOARD
+	default "magic_carpet"
+
+config SPI_STM32_INTERRUPT
+	default y
+	depends on SPI
+
+endif # BOARD_MAGIC_CARPET

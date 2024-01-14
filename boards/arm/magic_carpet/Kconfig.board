@@ -1,0 +1,8 @@
+# MagicCarpet board configuration
+
+# Copyright 2021 The Chromium OS Authors
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_MAGIC_CARPET
+	bool "MagicCarpet CAN Board"
+	depends on SOC_STM32G473XX
