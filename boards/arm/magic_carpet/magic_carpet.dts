@@ -126,7 +126,7 @@
 	pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
-	status = "okay";
+	status = "disabled";
 };
 
 &lpuart1 {
@@ -198,7 +198,7 @@ stm32_lp_tick_source: &lptim1 {
 &fdcan2 {
 	clocks = <&rcc STM32_CLOCK_BUS_APB1 0x02000000>,
 		 <&rcc STM32_SRC_HSE FDCAN_SEL(0)>;
-	pinctrl-0 = <&fdcan1_rx_pa11 &fdcan1_tx_pa12>;
+	pinctrl-0 = <&fdcan2_rx_pb12 &fdcan2_tx_pb13>;
 	pinctrl-names = "default";
 	bus-speed = <250000>;
 	bus-speed-data = <1000000>;
@@ -208,6 +208,8 @@ stm32_lp_tick_source: &lptim1 {
 zephyr_udc0: &usb {
         pinctrl-0 = <&usb_dm_pa11 &usb_dp_pa12>;
         pinctrl-names = "default";
+		clocks = <&rcc STM32_CLOCK_BUS_APB1 0x00800000>,
+				 <&rcc STM32_SRC_HSI48 CLK48_SEL(0)>;
         status = "okay";
 };
 
