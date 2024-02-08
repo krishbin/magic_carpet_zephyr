@@ -1,0 +1,9 @@
+sample:
+  name: MPU9250 sensor
+tests:
+  mpu6050:
+    build_only: true
+    platform_allow: magic_carpet
+    tags: sensors
+    integration_platforms:
+      - magic_carpet

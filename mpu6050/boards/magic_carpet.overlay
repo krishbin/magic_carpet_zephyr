@@ -1,0 +1,35 @@
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,shell-uart = &cdc_acm_uart0;
+    };
+    aliases {
+        qdec0 = &qdec;
+    };
+};
+
+&timers3 {
+    status = "okay";
+        qdec: qdec {
+        compatible = "st,stm32-qdec";
+        status = "okay";
+        pinctrl-0 = <&tim3_ch1_pa6 &tim3_ch2_pa7>;
+        pinctrl-names = "default";
+        st,input-polarity-inverted;
+        st,counts-per-revolution = <16>;
+    };
+};
+
+&i2c2 {
+	mpu6050@68 {
+		compatible = "invensense,mpu6050";
+		reg = <0x68>;
+		status = "okay";
+	};
+};
